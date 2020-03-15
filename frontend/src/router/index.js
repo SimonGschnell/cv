@@ -3,13 +3,19 @@ import Router from 'vue-router'
 
 const routerOptions = [
   {
-    path: '/', component: 'Home'
+    path: '/', name: 'Home', component: 'Home'
   },
   {
-    path: '/about', component: 'About'
+    path: '/about', name: 'About', component: 'About'
   },
   {
-    path: '*', component: 'NotFound'
+    path: '/contact', name: 'Contact', component: 'Contact'
+  },
+  {
+    path: '/projects', name: 'Projects', component: 'Projects'
+  },
+  {
+    path: '*', name: 'notfound', component: 'NotFound'
   }
 ]
 
