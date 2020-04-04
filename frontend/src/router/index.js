@@ -15,6 +15,9 @@ const routerOptions = [
     path: '/projects', name: 'Projects', component: 'Projects'
   },
   {
+    path: '/newproject', name: 'NewProject', component: 'NewProject'
+  },
+  {
     path: '*', name: 'notfound', component: 'NotFound'
   }
 ]

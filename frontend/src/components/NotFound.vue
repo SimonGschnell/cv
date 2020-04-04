@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <v-container>
     <p>Error404</p>
-  </div>
+  </v-container>
 </template>
 
 

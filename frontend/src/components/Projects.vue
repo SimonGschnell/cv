@@ -1,19 +1,30 @@
 <template>
-  <div v-if="items">
-    <h1>Projects</h1>
+  <v-container fluid="true" v-if="items">
+    <h1 class="pl-2 display-2 font-weight-bold" >Projects</h1>
     <v-container>
       <v-row dense>
          <v-col
           v-for="item in items"
           :key="item.title"
           cols="12"
+          class="mb-3"
         >
     <v-card
-
-            color="#385F73"
+            shaped
             dark
-            :style="{'background-image': 'url(/static/assets/inst.png)'}"
           >
+         <v-row>
+           <v-col sm="12" md="4"  class="align-center">
+          <v-img
+              :src="item.logo"
+              height="200"
+              width="200"
+              contain
+              class="grey darken-4"
+            ></v-img>
+            </v-col>
+            <v-col sm="12" md="8">
+       
             <v-card-title class="headline">{{item.title}}</v-card-title>
 
             <v-card-subtitle>{{item.logo}}</v-card-subtitle>
@@ -22,13 +33,13 @@
               <v-btn text>Listen Now</v-btn>
               <span class="ml-auto mr-5 font-weight-light">{{item.date}}</span>
             </v-card-actions>
+         </v-col>
+         </v-row>
           </v-card>
          </v-col>
           </v-row>
     </v-container>
-    
-    
-  </div>
+  </v-container>
 </template>
 
 <script>

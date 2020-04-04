@@ -32,3 +32,16 @@ def projects():
 @app.route('/api/navbar/items')
 def nav_items():
     pass
+
+@app.route('/api/newproject', methods=["GET","POST"])
+def new_project():
+    if request.method == "POST":
+        data =request.get_json(silent=True)
+        title = data[0].get('content')
+        description = data[1].get('content')
+        logo = data[2].get('content')
+        date = data[3].get('content')
+        newProject = Projects(title=title,description=description,logo=logo,date=date)
+        db.session.add(newProject)
+        db.session.commit()
+    return "200"

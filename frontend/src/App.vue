@@ -8,27 +8,33 @@
       dark
       collapse-on-scroll
       style="
-      background-image: url('https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg');
-      background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  "
+      background-image: url('https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg');"
       app
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on }">
+        <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
+      </template>
+      <v-list>
+          <v-list-item
+            v-for="n in 5"
+            :key="n"
+            @click="() => {}"
+          >
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+    </v-menu>
+      
 
-      <v-toolbar-title>Page title</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+      <v-btn target="_blank" href="https://www.linkedin.com/in/simon-gschnell-87b081169/" icon>
+        <v-icon>mdi-linkedin</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+     
 
       <v-menu
         left
@@ -61,11 +67,12 @@
    
 
     <v-content>
-       <div class="d-flex">
+      <v-container fluid>
+       <v-row>
+         <v-col sm="2" md="auto">
       <v-card
     height="400"
-    width="256"
-    class="ma-6"
+    width="200"
   >
   
     <v-navigation-drawer 
@@ -117,10 +124,14 @@
       </v-list>
     </v-navigation-drawer>
   </v-card>
-      <v-card class="flex-grow-1 mr-6 mb-6 mt-6 pa-6">
+  </v-col>
+  <v-col class="flex-grow-1" >
+      <v-card >
         <router-view/>
       </v-card>
-      </div>
+      </v-col>
+      </v-row>
+      </v-container>
     </v-content>
     
     
@@ -134,13 +145,17 @@ export default {
 
   data: () => ({
     items: [
-      { icon: "mdi-account-box", title : "Home" },
-      { icon: "mdi-account-box", title : "About" },
-      { icon: "mdi-account-box", title : "Contact" },
-      { icon: "mdi-account-box", title : "Projects" },
+      { icon: "mdi-home-outline", title : "Home" },
+      { icon: "mdi-information-outline", title : "About" },
+      { icon: "mdi-folder-outline", title : "Projects" },
+      { icon: "mdi-email-outline", title : "Contact" },
+      { icon: "mdi-account-box", title : "NewProject" },
       
-    ]
+    ],
   }),
+  methods:{
+   
+  }
 };
 </script>
 <style>
