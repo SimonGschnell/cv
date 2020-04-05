@@ -54,7 +54,7 @@ export default {
         }
     },
     createProject () {
-        let path = "/api/newproject"
+        let path = "https://portfoglio.herokuapp.com/api/newproject"
         if (this.clearIteams(true)){
             
             axios.post(path,this.attributes).then( response => {

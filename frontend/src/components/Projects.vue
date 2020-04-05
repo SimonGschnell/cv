@@ -59,7 +59,7 @@ export default {
     //
   },
   created () {
-    const path = '/api/projects'
+    const path = 'https://portfoglio.herokuapp.com/api/projects'
           let result = null
           axios.get(path).then( response => {
             this.items = response.data
