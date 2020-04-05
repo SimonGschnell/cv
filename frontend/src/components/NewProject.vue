@@ -54,7 +54,7 @@ export default {
         }
     },
     createProject () {
-        let path = "http://localhost:5000/api/newproject"
+        let path = "/api/newproject"
         if (this.clearIteams(true)){
             
             axios.post(path,this.attributes).then( response => {

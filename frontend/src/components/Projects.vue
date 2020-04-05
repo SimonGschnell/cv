@@ -59,7 +59,7 @@ export default {
     //
   },
   created () {
-    const path = 'http://localhost:5000/api/projects'
+    const path = '/api/projects'
           let result = null
           axios.get(path).then( response => {
             this.items = response.data
