@@ -1,6 +1,6 @@
 from . import app, db
 from flask import request, render_template, jsonify, redirect, url_for
-import requests
+
 from random import *
 from .models import Projects, Contacts
 
