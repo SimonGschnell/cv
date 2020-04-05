@@ -30,9 +30,15 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn target="_blank" href="https://www.linkedin.com/in/simon-gschnell-87b081169/" icon>
+      <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn v-on="on" target="_blank" href="https://www.linkedin.com/in/simon-gschnell-87b081169/" icon>
         <v-icon>mdi-linkedin</v-icon>
       </v-btn>
+      </template>
+      <span>LinkedIn profile</span>
+    </v-tooltip>
+      
 
      
 

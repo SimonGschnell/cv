@@ -40,7 +40,7 @@
   <v-col sm="0" md="4" lg="4" xl="6">
     <v-chip 
       v-for="skill in skills"
-      :key="skill"
+      :key="skill.name"
       outlined
       ripple
       class="ma-2"
@@ -51,22 +51,52 @@
     
   </v-col>
   </v-row>
+  
+  <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      color="info"
+      right
+      
+    >
+    
+    <span class="text-center">
+      Thank you for your message, </span><span class="font-weight-bold text-uppercase">{{snack}}!
+      </span>
+      <v-icon dark>mdi-email-outline</v-icon>
+    </v-snackbar>
+    
  </v-container>
 </template>
 
 <script>
+import axios from 'axios'
 export default{
   data(){
     return{
         skills:[{name:"Html",color:"grey"},{name:"Css",color:"grey"},{name:"Java",color:"green"},{name:"Javascript",color:"orange"},{name:"Vue",color:"green"},{name:"Math",color:"grey"},{name:"Regex",color:"orange"}
         ,{name:"Python",color:"green"},{name:"Logic",color:"grey"},{name:"Descrete",color:"grey"},{name:"bs4",color:"orange"},{name:"Webscrapping",color:"green"},{name:"Backend",color:"grey"},{name:"Android",color:"orange"},{name:"Frontend",color:"grey"},{name:"Bash-Scripting",color:"orange"},{name:"Command-line",color:"orange"},{name:"Git",color:"green"}],
         list : [{name:"Age", value:22}, {name:"Name", value:"Simon Gschnell"}, {name:"Email", value:"Simon.Gschnell@stud-inf.unibz.it"}],
-
+        
+        timeout:5000,
+        snack:"" ,
     }
   },
   methods: {
   }, 
+  
+  computed:{
+    snackbar (){
+      if(this.$route.params.hasOwnProperty('name')){
+          this.snack = this.$route.params.name
+          return true
+      }
+      return false
+    }
+  },
   mounted () {
+    
+    
   } 
 }
 </script>

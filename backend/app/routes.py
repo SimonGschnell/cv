@@ -1,8 +1,8 @@
 from . import app, db
-from flask import request, render_template, jsonify
+from flask import request, render_template, jsonify, redirect, url_for
 import requests
 from random import *
-from .models import Projects
+from .models import Projects, Contacts
 
 
 @app.route('/', defaults={'path': ''})
@@ -45,3 +45,16 @@ def new_project():
         db.session.add(newProject)
         db.session.commit()
     return "200"
+
+@app.route('/api/contact', methods=["GET","POST"])
+def contact():
+
+    if request.method == "POST":
+        data =request.get_json(silent=True)
+        newContact = Contacts(name=data[0], email=data[1], from_where=data[2], msg=data[3])
+        db.session.add(newContact)
+        db.session.commit()
+    return "200"
+
+
+

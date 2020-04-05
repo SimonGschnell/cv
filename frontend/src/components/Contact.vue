@@ -60,7 +60,7 @@
     <v-btn
       color="success"
       class="mr-4"
-      @click="validate"
+      @click="submitMessage"
     >
       Say Hello!
     </v-btn>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default{
   data(){
     return{
@@ -94,14 +95,30 @@ export default{
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
       items: [
-        'item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
+        'Facebook',
+        'Upwork',
+        'eJobBörse',
+        'Another company',
       ],
     }
   },
   methods:{
+    submitMessage(){
+      if(this.$refs.form.validate()){
+        let path = "http://localhost:5000/api/contact"
+          let data = [this.name, this.email, this.select,this.message]
+          axios.post(path,data).then( response => {
+              if(response.data == "200"){
+                  console.log(response)
+              }
+              
+          }).catch( e =>{
+              console.log(e)
+          }) 
+          this.$router.push({ name: 'Home', params: { name: this.name }})
+        
+      }
+    }
 
   },
 }

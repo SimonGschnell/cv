@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid="true" v-if="items">
+  <v-container fluid v-if="items">
     <h1 class="pl-2 display-2 font-weight-bold" >Projects</h1>
     <v-container>
       <v-row dense>
@@ -10,18 +10,20 @@
           class="mb-3"
         >
     <v-card
-            shaped
+            
             dark
           >
          <v-row>
-           <v-col sm="12" md="4"  class="align-center">
+           <v-col sm="12" md="4"  align-self="center">
+             <div  class="ma-auto ">
           <v-img
               :src="item.logo"
-              height="200"
-              width="200"
+              max-height="200"
+              
               contain
-              class="grey darken-4"
+              class="grey darken-4 "
             ></v-img>
+            </div>
             </v-col>
             <v-col sm="12" md="8">
        

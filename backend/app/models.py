@@ -4,6 +4,7 @@ class Contacts(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(64))
     email = db.Column(db.String(100))
+    from_where = db.Column(db.String(200),default="none")
     msg = db.Column(db.String(400))
 
 class Projects(db.Model):

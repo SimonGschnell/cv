@@ -93,7 +93,6 @@ export default{
       work: [
         {
           color: 'cyan',
-          year: '2015',
           avatar:"static/assets/mitas.jpg",
           list:["Managment of computer-hardware","Contact with customers","Build pc setups"],
           header:"Mitas",
@@ -102,7 +101,6 @@ export default{
         },
         {
           color: 'green',
-          year: '2016',
           avatar:"static/assets/webalm.jpg",
           list:["Collaboration on customer requested Website","Web development with bootstrap","Javascript",],
           header:"webAlm",
@@ -111,7 +109,6 @@ export default{
         },
         {
           color: 'pink',
-          year: '2018',
           avatar:"static/assets/gruber.jpg",
           list:["Relation with suppliers","ERP management","Report creation","Sql queries","Hardware managment for employees (ME MDM app)"],
           header:"Gruber Logistics Spa",
@@ -120,7 +117,6 @@ export default{
         },
         {
           color: 'primary',
-          year: '2019',
           avatar:"static/assets/yanovis.jpg",
           list:["javascript development","Vue Framework","Html & Css","Axios requests (javascript)"],
           header:"Yanovis",
@@ -129,15 +125,10 @@ export default{
         },],
       school: [
         {
-          color: 'cyan',
-          avatar:"static/assets/mitas.jpg",
           header:"Landesberufsschule für Handwerk und Industrie",
           text:"Matura Informatik"
         },
         {
-          color: 'green',
-          year: '2016',
-          avatar:"static/assets/webalm.svg",
           header:"Unibz",
           text:"Bachelor Computer Science"
         },
