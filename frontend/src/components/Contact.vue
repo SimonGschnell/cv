@@ -105,9 +105,9 @@ export default{
   methods:{
     submitMessage(){
       if(this.$refs.form.validate()){
-        let path = "https://portfoglio.herokuapp.com/api/contact"
+        
           let data = [this.name, this.email, this.select,this.message]
-          axios.post(path,data).then( response => {
+          axios.post("/api/contact",data).then( response => {
               if(response.data == "200"){
                   console.log(response)
               }
