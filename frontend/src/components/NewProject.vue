@@ -57,7 +57,7 @@ export default {
         
         if (this.clearIteams(true)){
             
-            axios.post("/api/newproject",this.attributes).then( response => {
+            axios.post(process.env.baseURL+"/api/newproject",this.attributes).then( response => {
                 console.log(response)
                 if (response.data == "200"){
                     this.clearIteams()

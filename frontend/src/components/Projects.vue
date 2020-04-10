@@ -61,7 +61,7 @@ export default {
   created () {
     const path = 
           
-          axios.get('/api/projects').then( response => {
+          axios.get(process.env.baseURL+'/api/projects').then( response => {
             this.items = response.data
           }).catch( error => {
             console.log(error)

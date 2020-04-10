@@ -107,7 +107,7 @@ export default{
       if(this.$refs.form.validate()){
         
           let data = [this.name, this.email, this.select,this.message]
-          axios.post("/api/contact",data).then( response => {
+          axios.post(process.env.baseURL+"/api/contact",data).then( response => {
               if(response.data == "200"){
                   console.log(response)
               }
